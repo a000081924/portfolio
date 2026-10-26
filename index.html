@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tom Chan · Portfolio</title>
+  <meta name="description" content="Tom Chan's portfolio, with a case study of a web workbench that reconstructs scanned 1946 Chinese newspaper pages with PaddleOCR, FastAPI and Svelte on a single GPU.">
+  <meta name="author" content="Tom Chan">
+  <meta name="keywords" content="Tom Chan, portfolio, OCR, document layout analysis, PaddleOCR, FastAPI, Svelte, Python, TypeScript, historical newspapers">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tom Chan · Portfolio">
+  <meta property="og:description" content="A web workbench that reconstructs scanned historical newspaper pages: layout in about 4 seconds, corrections in the browser, ALTO and PAGE-XML export.">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/notion.css">
+  <script src="assets/js/viewer.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<main id="main" class="page">
+  <div class="page-icon"><img src="assets/img/avatar.webp" alt="Line drawing of Tom Chan" width="124" height="124"></div>
+  <h1 class="page-title">Tom Chan</h1>
+  <p class="page-lede">I build software that turns scanned documents into text people can search and correct.</p>
+
+  <div class="callout">
+    <div>
+      <p>Hi, I'm Tom. My most recent project is a master's capstone: a web workbench that reads scanned 1946 Chinese newspaper pages on one GPU. It draws a page's layout within about four seconds. An archivist can then fix any line in the browser and export the page as ALTO or PAGE-XML, the formats libraries use.</p>
+      <p>The case study gives the measurements, including the accuracy target the project missed and the reason.</p>
+    </div>
+  </div>
+
+  <section id="work" aria-labelledby="work-h">
+    <div class="db-title">
+      <h2 id="work-h">Projects</h2>
+    </div>
+    <div class="gallery">
+      <a class="card wide" href="projects/newspaper-reconstruction/">
+        <div class="card-cover"><img src="assets/img/card-workbench.webp" alt="The newspaper workbench showing layout regions drawn over a 1946 newspaper scan" width="900" height="562" loading="lazy"></div>
+        <div class="card-body">
+          <span class="meta">Case study · October 2026</span>
+          <strong>Reconstructing historical newspaper pages</strong>
+          <p>Upload a scanned page, watch it being read region by region, correct the text and export it. It was built for dense vertical Traditional Chinese broadsheets and runs on one consumer GPU.</p>
+          <p>Layout on screen in 3.6 s · a full page in 35 to 47 s · 106.5 pages an hour · 13 + 5 tests, 85% coverage.</p>
+          <div class="tags"><span class="tag purple">Capstone</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Svelte 5</span><span class="tag">PaddleOCR</span><span class="tag">SQLite</span></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="db-title">
+      <h2 id="deliverables-h">Deliverables</h2>
+    </div>
+    <div class="gallery" aria-labelledby="deliverables-h">
+      <a class="card" href="slides/">
+        <div class="card-cover"><img src="assets/img/card-slides.webp" alt="Title slide of the final presentation" width="900" height="506" loading="lazy"></div>
+        <div class="card-body">
+          <strong>Final presentation slides</strong>
+          <p>The 18-slide deck from the final demo: problem, architecture, results and the live-demo walkthrough. Click a slide or use the arrow keys to move through it.</p>
+          <div class="tags"><span class="tag blue">Slides</span></div>
+        </div>
+      </a>
+      <a class="card" href="assets/img/architecture.webp" data-viewer data-full="assets/img/architecture-full.webp" data-caption="System architecture: four tiers around one GPU">
+        <div class="card-cover"><img src="assets/img/card-architecture.webp" alt="System architecture diagram" width="900" height="573" loading="lazy"></div>
+        <div class="card-body">
+          <strong>System architecture diagram</strong>
+          <p>How the browser, the FastAPI server, the GPU worker and the database fit together, including the upload checks and the streamed stages.</p>
+          <div class="tags"><span class="tag green">Design</span></div>
+        </div>
+      </a>
+      <a class="card" href="projects/newspaper-reconstruction/#results">
+        <div class="card-cover"><img src="assets/img/chart-latency.webp" alt="Chart of API response times during recognition" width="1452" height="590" loading="lazy" style="object-fit: contain; background: #fff;"></div>
+        <div class="card-body">
+          <strong>Evaluation results</strong>
+          <p>Speed and accuracy on the 1946 page, plus API stalls that only showed up in an end-to-end run.</p>
+          <div class="tags"><span class="tag orange">Evaluation</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-h">
+    <div class="db-title">
+      <h2 id="skills-h">Skills</h2>
+    </div>
+    <div class="table-wrap">
+      <table class="db">
+        <thead>
+          <tr>
+            <th scope="col">Area</th>
+            <th scope="col">Tools</th>
+            <th scope="col">Where I used them</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Back end</td>
+            <td><span class="tag">Python 3.13</span> <span class="tag">FastAPI</span> <span class="tag">asyncio</span> <span class="tag">SQLite</span> <span class="tag">Pydantic</span></td>
+            <td>Upload guards, a job queue in front of one GPU, and an event stream that a browser can reconnect to after a reload</td>
+          </tr>
+          <tr>
+            <td>Front end</td>
+            <td><span class="tag">Svelte 5</span> <span class="tag">TypeScript</span> <span class="tag">Vite</span> <span class="tag">Canvas</span></td>
+            <td>A workbench that draws layout regions over a 35-megapixel scan as each recognition stage arrives</td>
+          </tr>
+          <tr>
+            <td>Document AI</td>
+            <td><span class="tag">PaddleOCR</span> <span class="tag">PP-StructureV3</span> <span class="tag">ALTO v4</span> <span class="tag">PAGE-XML</span></td>
+            <td>Running a one-shot recognition pipeline stage by stage, and reading order for vertical Chinese</td>
+          </tr>
+          <tr>
+            <td>Quality</td>
+            <td><span class="tag">pytest</span> <span class="tag">bun test</span> <span class="tag">coverage</span> <span class="tag">uv</span> <span class="tag">Git</span></td>
+            <td>13 back-end and 5 front-end tests, 85% statement coverage, and a fake engine so the suite runs without a GPU</td>
+          </tr>
+          <tr>
+            <td>Evaluation</td>
+            <td><span class="tag">CER</span> <span class="tag">IoU matching</span> <span class="tag">Heuristic review</span></td>
+            <td>Character error rate against reference lines, timing over HTTP, and a usability review against Nielsen's heuristics</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <span>© 2026 Tom Chan</span>
+    <a href="mailto:tomchan2000@gmail.com">tomchan2000@gmail.com</a>
+  </footer>
+</main>
+</body>
+</html>

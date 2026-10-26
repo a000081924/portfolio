@@ -1,0 +1,18 @@
+import{J as e,L as t,T as n,_ as r,b as i,g as a,ht as o,pt as s,x as c}from"./modules/shiki-D4qZ2_Su.js";import{X as l,Z as u,ut as d}from"./index-DfYhmNCy.js";import{t as f}from"./slidev/default-DDr5p8jR.js";import{t as p}from"./slidev/CodeBlockWrapper-BmP7t1u-.js";var m={class:`grid grid-cols-[1.45fr_1fr] gap-5`},h={class:`code-xs`},g=d({__name:`portfolio-build.md__slidev_16`,setup(d){let{$slidev:g,$nav:_,$clicksContext:v,$clicks:y,$page:b,$renderContext:x,$frontmatter:S}=u();return v.setup(),(u,d)=>{let g=p;return t(),r(f,o(n(s(l)(s(S),15))),{default:e(()=>[d[2]||=a(`p`,{class:`eyebrow`},`Part B · Backend processes`,-1),d[3]||=a(`h1`,null,`Behind the UI: API calls, guards and the database`,-1),d[4]||=a(`div`,{class:`badges`},[a(`span`,{class:`live`},`Live · terminal 2`),a(`span`,{class:`tag`},`FR-2 content address`),a(`span`,{class:`tag`},`NFR-4 untrusted uploads`),a(`span`,{class:`tag`},`FR-8 corrections as rows`)],-1),a(`div`,m,[a(`div`,h,[c(g,{title:``,ranges:[]},{default:e(()=>[...d[0]||=[a(`pre`,{class:`shiki shiki-themes vitesse-dark vitesse-light slidev-code`,style:{"--shiki-dark":`#dbd7caee`,"--shiki-light":`#393a34`,"--shiki-dark-bg":`#121212`,"--shiki-light-bg":`#ffffff`}},[a(`code`,{class:`language-text`},[a(`span`,{class:`line`},[a(`span`,null,`PS> $API = "http://127.0.0.1:8000/api"`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`PS> curl.exe -s -F "file=@page.png" $API/documents      # same scan again`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`{"document_id":"4ada8775-…","page_id":"ddef143e-…","cached":true}`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`PS> curl.exe -s -F "file=@README.md" $API/documents     # not an image`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`{"detail":"invalid or oversized image"}`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,'PS> sqlite3 -header -column "$env:TEMP\\newsrec-demo\\metadata.sqlite3" `')]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`      ".read docs/final-presentation/demo/peek.sql"`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`documents  pages  results  corrections  jobs  events`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`        1      1        1            4     1       6`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`sha256        blob`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`8583514fedfc  b5b8d1b1-86d3-4a04-919e-2509f24773d4`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`block_id  line_index  text`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`       0           0  美國務院宣布杜總統薦`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`       0           1  哈利曼爲商部長`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`       …`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`sequence  stage         elapsed_ms`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`       4  layout              3195`)]),i(`
+`),a(`span`,{class:`line`},[a(`span`,null,`       6  done               55983`)])])],-1)]]),_:1})]),d[1]||=a(`div`,null,[a(`div`,{class:`card proof`},[a(`h3`,null,[a(`code`,null,`"cached": true`),i(` in under a second`)]),a(`p`,null,`The server hashed the normalized image, found the page and skipped the GPU.`)]),a(`div`,{class:`card proof`},[a(`h3`,null,`Refused before the recognizer`),a(`p`,null,[i(`Size cap, `),a(`code`,null,`verify()`),i(`, pixel limit and single-frame check run before anything is stored.`)])]),a(`div`,{class:`card proof`},[a(`h3`,null,`Edits and stages are rows in SQLite`),a(`p`,null,`Each correction is its own row, and the stored recognition is never rewritten. The events are the stages the browser just received.`)])],-1)])]),_:1},16)}}},[[`__scopeId`,`data-v-ee75f4de`]]);export{g as default};
