@@ -48,15 +48,19 @@ onBeforeUnmount(() => window.removeEventListener('click', onClick))
 """
 
 text = (DECK / "slides.md").read_text(encoding="utf-8")
-# replacements = {
+# Required: without hash routing Slidev shows its own 404 page under /portfolio/slides/.
+CONFIG = "colorSchema: light\n"
+if CONFIG not in text:
+    sys.exit(f"not found in slides.md: {CONFIG!r}")
+text = text.replace(CONFIG, CONFIG + "routerMode: hash\npresenter: dev\ndownload: false\n", 1)
+
+# # Optional: skipped when the names are already filled in slides.md.
+# names = {
 #     "author: Your name\n": "author: Tom Chan\n",
-#     "colorSchema: light\n": "colorSchema: light\nrouterMode: hash\npresenter: dev\ndownload: false\n",
 #     "Your name · Course · October 2026": "Tom Chan · Capstone project · October 2026",
 #     "**[name]**": "Tom Chan",
 # }
-# for old, new in replacements.items():
-#     if old not in text:
-#         sys.exit(f"placeholder not found in slides.md: {old!r}")
+# for old, new in names.items():
 #     text = text.replace(old, new, 1)
 
 if LAYER.exists():
