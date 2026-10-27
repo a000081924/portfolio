@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / "news-reconstruction"
-DECK = SRC / "docs" / "final-presentation"
+DECK = SRC / ".." / "final-presentation"
 OUT = ROOT / "slides"
 TEMP = DECK / "portfolio-build.md"
 LAYER = DECK / "global-bottom.vue"
@@ -48,16 +48,16 @@ onBeforeUnmount(() => window.removeEventListener('click', onClick))
 """
 
 text = (DECK / "slides.md").read_text(encoding="utf-8")
-replacements = {
-    "author: Your name\n": "author: Tom Chan\n",
-    "colorSchema: light\n": "colorSchema: light\nrouterMode: hash\npresenter: dev\ndownload: false\n",
-    "Your name · Course · October 2026": "Tom Chan · Capstone project · October 2026",
-    "**[name]**": "Tom Chan",
-}
-for old, new in replacements.items():
-    if old not in text:
-        sys.exit(f"placeholder not found in slides.md: {old!r}")
-    text = text.replace(old, new, 1)
+# replacements = {
+#     "author: Your name\n": "author: Tom Chan\n",
+#     "colorSchema: light\n": "colorSchema: light\nrouterMode: hash\npresenter: dev\ndownload: false\n",
+#     "Your name · Course · October 2026": "Tom Chan · Capstone project · October 2026",
+#     "**[name]**": "Tom Chan",
+# }
+# for old, new in replacements.items():
+#     if old not in text:
+#         sys.exit(f"placeholder not found in slides.md: {old!r}")
+#     text = text.replace(old, new, 1)
 
 if LAYER.exists():
     sys.exit(f"{LAYER} already exists; this script would overwrite it")
